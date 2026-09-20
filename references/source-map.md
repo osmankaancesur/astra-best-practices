@@ -26,4 +26,9 @@ For current model facts, prompting recommendations, API behavior, limits, pricin
 
 ## Snapshot provenance
 
-This skill was assembled from the official sources above as available on 2026-09-13. The summaries intentionally paraphrase and compress the guidance rather than mirroring the full documentation.
+This skill was refreshed against the official sources above on 2026-09-18. The summaries intentionally paraphrase and compress the guidance rather than mirroring the full documentation.
+
+
+## Local revision note
+
+v1.2 promotes instruction-provenance/debugging guidance into the root skill so it applies even when a specialized reference is not loaded: when persistent instructions cause unexpected pauses, confirmation requests, early handoffs, or divergence, identify the exact responsible instruction when available and separate that written rule from the model's interpretation.
