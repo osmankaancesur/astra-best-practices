@@ -18,6 +18,7 @@ Optimize instructions for GPT-6 Astra without overconstraining it.
 7. Use subagents or parallel work when the environment supports them and parallelization is likely to improve speed or quality. Do not delegate mechanically when the overhead exceeds the benefit.
 8. Calibrate verification to risk and scope. Run focused tests and required checks; broaden or repeat testing only when failures, changes, or unresolved risks justify it.
 9. Keep final communication direct and proportionate to the task. Report what was completed, what was verified, and any material unresolved risk.
+10. If this skill or another persistent instruction causes a pause, confirmation request, unfinished handoff, or divergence from the user's intended outcome, identify the exact instruction responsible when available and briefly explain why it applies. Distinguish the written instruction from the model's own interpretation.
 
 ## When executing work with Astra
 
@@ -44,7 +45,8 @@ Look specifically for:
 - approval gates added for older models that unnecessarily stop Astra;
 - missing completion criteria that encourage an early handoff;
 - missing delegation guidance where parallel work would materially help;
-- style instructions that cause bloated, repetitive, or overformatted answers.
+- style instructions that cause bloated, repetitive, or overformatted answers;
+- hidden or ambiguous instruction conflicts that cause unexpected pauses, confirmation requests, early handoffs, or divergence from the user's intent. When diagnosing one, point to the exact responsible instruction when available rather than attributing the behavior vaguely to the skill.
 
 Prefer narrow, contextual replacements. Preserve instructions that encode real project constraints, safety boundaries, irreversible-action gates, exact interfaces, or fragile procedures.
 
