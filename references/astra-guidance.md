@@ -14,7 +14,7 @@ Do not manufacture questions merely because a detail is unspecified. Ask only wh
 
 Explicit user instructions override workflow guidance in this skill when they conflict, subject to higher-priority system, safety, and tool constraints.
 
-When a skill or repository instruction causes an unexpected pause or divergence, identify the exact instruction responsible if that information is available. Distinguish a written requirement from the agent's own interpretation.
+When a skill or repository instruction causes an unexpected pause, confirmation request, unfinished handoff, or divergence from the user's intended outcome, identify the exact instruction responsible if that information is available and briefly explain why it applies. Distinguish a written requirement from the agent's own interpretation.
 
 ## Delegation
 
