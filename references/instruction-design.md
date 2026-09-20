@@ -39,3 +39,9 @@ Review old instructions written to restrain weaker or more impulsive models. Kee
 ## Completion boundaries
 
 Persistent instructions can state defaults, but task-specific prompts should define what “done” means when completion depends on the requested outcome. Avoid automatic stop-for-review gates unless review is genuinely required before further work.
+
+## Instruction provenance and debugging
+
+When a persistent instruction unexpectedly changes behavior, make the source of that behavior inspectable. If a skill or `AGENTS.md` rule causes the agent to pause, request confirmation, stop before the requested end state, or diverge from the user's intent, identify the exact written instruction responsible when it is available and briefly explain why it applies.
+
+Do not blur together a written requirement and the model's own interpretation. This makes stale approval gates, overlapping skills, and accidental conflicts easier to remove without weakening legitimate safety or irreversible-action boundaries.
