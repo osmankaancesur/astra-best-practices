@@ -1,76 +1,38 @@
-# Astra Best Practices
+# GPT-6 Agent Execution Best Practices — v1.3
 
-A community-maintained skill for working effectively with GPT-6 Astra and ChatGPT Work, with a focus on completion boundaries, autonomy, context loading, delegation, verification, and instruction debugging.
+A concise skill for completing substantial GPT-6 agent tasks. It evolves **Astra Best Practices v1.2** while retaining its completion, autonomy, contextual loading, selective delegation, proportional verification, and instruction-provenance safeguards.
 
-> **Unofficial project.** This repository is not an OpenAI product and is not endorsed by OpenAI. It summarizes and operationalizes public guidance; for current model behavior and product details, prefer the official sources linked in `references/source-map.md`.
+The core is shared across GPT-6 models. Documented Astra observations are optional background, not assumptions about Sol or Luna. This is an independent package informed by official OpenAI documentation, checked on **2026-09-22**; it is not an official OpenAI release.
 
-## What this skill does
+## Use
 
-`astra-best-practices` is intended for substantial Astra or Work workflows and for creating, auditing, or improving:
-
-- Astra prompts
-- agent skills
-- `AGENTS.md` files
-- persistent agent instructions
-- multi-stage execution and verification workflows
-
-The root `SKILL.md` stays intentionally compact. More specialized guidance is loaded progressively from `references/`.
-
-## Install
-
-Clone the repository into your agent skills directory:
-
-```bash
-mkdir -p ~/.agents/skills
-git clone https://github.com/osmankaancesur/astra-best-practices.git \
-  ~/.agents/skills/astra-best-practices
-```
-
-To update an existing installation:
-
-```bash
-cd ~/.agents/skills/astra-best-practices
-git pull
-```
-
-If your agent environment uses a different skills directory, place the repository there instead.
-
-## Repository structure
+Import this skill folder through your agent's supported skill installation workflow, preserving its relative paths. In Codex, invoke it by name:
 
 ```text
-astra-best-practices/
-├── SKILL.md
-├── README.md
-├── CHANGELOG.md
-├── LICENSE
-└── references/
-    ├── astra-guidance.md
-    ├── instruction-design.md
-    └── source-map.md
+Use $gpt-6-agent-execution to finish the requested change.
+Preserve the stated constraints and deliver the result with relevant verification.
 ```
 
-## Versions
+Keep task-specific acceptance criteria in the actual request. The skill does not supply tools, change permissions, select a model, or guarantee identical behavior across models. If delegation tools are unavailable, execution continues directly. Read-only tasks remain read-only.
 
-### v1.2 — 2026-09-18
+For an upgrade, replace the old `astra-best-practices` skill with this folder and update explicit invocations to `gpt-6-agent-execution`. Avoid enabling both as execution defaults. Preserve any local customizations deliberately; the names of installed-skill directories can be managed by the host.
 
-Promotes instruction-provenance and debugging guidance into the root skill. When persistent instructions cause unexpected pauses, confirmation requests, early handoffs, or divergence from user intent, the skill now asks the agent to identify the exact written instruction responsible when available and distinguish it from the model's interpretation.
+## Package
 
-### v1.1 — 2026-09-13
+| File | Purpose |
+| --- | --- |
+| [SKILL.md](SKILL.md) | Compact runtime workflow and reference router. |
+| [Execution guidance](references/execution-guidance.md) | Optional operational edge cases. |
+| [Model notes](references/model-notes.md) | Supported Astra observations and evidence limits. |
+| [Source map](references/source-map.md) | Eight official sources, claim scope, and refresh rules. |
+| [UI metadata](agents/openai.yaml) | Display name and invocation prompt. |
+| [Release metadata](metadata.json) | Canonical name, version, provenance, and evaluation status; not runtime configuration. |
+| [Changelog](CHANGELOG.md) | v1.3 changes and v1.2 preservation map. |
+| [Evaluation notes](evals/README.md) | Small, optional behavioral comparison protocol and cases. |
+| [Release audit](RELEASE-AUDIT.md) | Package checks performed and their limits. |
 
-Initial public baseline: outcome-focused execution, explicit completion boundaries, contextual document loading, safe autonomy, selective delegation, risk-calibrated verification, and progressive disclosure.
+General prompt, skill, or `AGENTS.md` design/auditing belongs to the separate `gpt-skills/instruction-audit` skill. It is not a dependency here. This skill retains only the local explanation needed when a governing instruction affects execution.
 
-The `v1.1` branch preserves the v1.1 source snapshot. `main` tracks the latest version.
+## Evidence and evaluation
 
-## Source philosophy
-
-The bundled guidance is a concise operational summary, not a replacement for live documentation. For time-sensitive facts such as model behavior, API details, limits, pricing, or feature availability, check the current official OpenAI sources first.
-
-See `references/source-map.md` for source links and refresh rules.
-
-## Contributing
-
-Issues and pull requests are welcome. Changes should stay narrow, evidence-based, and useful enough to justify their context cost. Avoid generic prompting advice, stale model assumptions, and rules that add unnecessary approval gates.
-
-## License
-
-MIT. See `LICENSE`.
+Official guidance, product mechanics, and package heuristics are separated in the references. No controlled Astra/Sol/Luna comparison has been run for v1.3, and no model-performance results are supplied. Use the optional cases with your own fixed environment before adopting model-specific adjustments. Evaluation material and release records are not prerequisites for routine skill use.

@@ -1,0 +1,4 @@
+interface:
+  display_name: "GPT-6 Agent Execution"
+  short_description: "Complete GPT-6 agent tasks with clear boundaries"
+  default_prompt: "Use $gpt-6-agent-execution to complete this task, preserve its constraints, and deliver the result with relevant verification."

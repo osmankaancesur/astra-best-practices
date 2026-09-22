@@ -1,0 +1,21 @@
+{
+  "name": "gpt-6-agent-execution",
+  "display_name": "GPT-6 Agent Execution",
+  "version": "1.3",
+  "released": "2026-09-22",
+  "documentation_checked": "2026-09-22",
+  "scope": "GPT-6 family agent execution",
+  "derived_from": {
+    "name": "astra-best-practices",
+    "version": "1.2",
+    "source": "user-supplied archive",
+    "archive_sha256": "ecf79378afd5bee4f3bbb3c3ea4b39b1aaa85810d27763073e62ed9201b7a092"
+  },
+  "entrypoint": "SKILL.md",
+  "source_map": "references/source-map.md",
+  "evaluation": {
+    "cross_model_status": "not_run",
+    "protocol": "evals/README.md"
+  },
+  "note": "Release metadata only; not an agent configuration or official OpenAI endorsement."
+}
